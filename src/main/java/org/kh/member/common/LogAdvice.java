@@ -4,6 +4,7 @@ import java.sql.Date;
 import java.text.SimpleDateFormat;
 
 import org.aspectj.lang.ProceedingJoinPoint;
+import org.aspectj.lang.Signature;
 
 public class LogAdvice {
 
@@ -28,6 +29,12 @@ public class LogAdvice {
 		System.out.println(timeNow + " [BEFORE] : 비즈니스 메소드 수행 전 로그");
 		Object returnObj = pjp.proceed();
 		System.out.println(timeNow + " [AFTER] : 비즈니스 메소드 수행 후 로그");
+
+		System.out.println("───── 기타 정보 ─────");
+		Signature sig = pjp.getSignature();
+
+		System.out.println(sig.getName());
+
 		return returnObj;
 	}
 
