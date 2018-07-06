@@ -20,22 +20,24 @@
 		<br>
 		<a href="/withdraw.do">회원탈퇴</a>
 		<br>
+		<c:if test="${sessionScope.member.userId == 'admin'}">
 		<a href="/allmember.do">전체회원 조회</a>
-		<br>
-	</c:when>
-	<c:otherwise>
-	<hr>
-	<form action="/login.do" method="POST" accept-charset="utf-8">
-		아이디
-		<input type="text" name="userId" placeholder="아이디 입력">
-		<br>
-		비밀번호
-		<input type="password" name="userPw" placeholder="비밀번호 입력">
-		<br>
-		<br>
-		<button type="submit">로그인</button>
-		<button type="button" onclick="signup();">회원가입</button>
-	</form>
+		</c:if>
+	<br>
+</c:when>
+<c:otherwise>
+<hr>
+<form action="/login.do" method="POST" accept-charset="utf-8">
+	아이디
+	<input type="text" name="userId" placeholder="아이디 입력">
+	<br>
+	비밀번호
+	<input type="password" name="userPw" placeholder="비밀번호 입력">
+	<br>
+	<br>
+	<button type="submit">로그인</button>
+	<button type="button" onclick="signup();">회원가입</button>
+</form>
 </c:otherwise>
 </c:choose>
 </fieldset>

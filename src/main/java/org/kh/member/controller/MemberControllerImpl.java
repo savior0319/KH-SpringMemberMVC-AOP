@@ -5,7 +5,7 @@ import java.util.List;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpSession;
 
-import org.kh.member.model.service.MemberServiceImpl;
+import org.kh.member.model.service.MemberService;
 import org.kh.member.model.vo.MemberVO;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
@@ -19,7 +19,7 @@ public class MemberControllerImpl implements MemberController {
 
 	@Autowired
 	@Qualifier(value = "memberService")
-	private MemberServiceImpl memberService;
+	private MemberService memberService;
 
 	@Override
 	@RequestMapping(value = "/login.do")
@@ -151,7 +151,8 @@ public class MemberControllerImpl implements MemberController {
 	@RequestMapping(value = "/allmember.do")
 	public Object allMember() {
 
-		List<Object> list = memberService.allMember();
+		@SuppressWarnings("unchecked")
+		List<Object> list = (List<Object>) memberService.allMember();
 
 		ModelAndView view = new ModelAndView();
 		view.addObject("list", list);

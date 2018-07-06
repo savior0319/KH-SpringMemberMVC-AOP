@@ -21,32 +21,42 @@ public class MemberServiceImpl implements MemberService {
 
 	@Override
 	public MemberVO selectOneMember(MemberVO mv) {
+		logic();
 		MemberVO m = memberDAO.selectOneMember(jdbcTemplate, mv);
 		return m;
 	}
 
 	@Override
 	public int updateMember(MemberVO mv) {
+		logic();
 		int result = memberDAO.updateMember(jdbcTemplate, mv);
 		return result;
 	}
 
 	@Override
 	public int insertMember(MemberVO mv) {
+		logic();
 		int result = memberDAO.insertMember(jdbcTemplate, mv);
 		return result;
 	}
 
 	@Override
 	public int withdrawMember(String userId) {
+		logic();
 		int result = memberDAO.withdrawMember(jdbcTemplate, userId);
 		return result;
 	}
 
 	@Override
 	public List<Object> allMember() {
+		logic();
 		List<Object> list = (List<Object>) memberDAO.allMember(jdbcTemplate);
 		return list;
+	}
+
+	@Override
+	public void logic() {
+		System.out.println("비즈니스 로직 호출");
 	}
 
 }

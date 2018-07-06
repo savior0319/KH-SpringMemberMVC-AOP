@@ -14,4 +14,6 @@ public interface MemberService {
 
 	Object allMember();
 
+	void logic();
+
 }
