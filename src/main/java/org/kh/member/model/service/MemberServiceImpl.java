@@ -59,4 +59,14 @@ public class MemberServiceImpl implements MemberService {
 		// System.out.println("비즈니스 로직 호출");
 	}
 
+	@Override
+	public MemberVO selectOneMemberNoEncrypt(MemberVO mv) {
+		
+		System.out.println("Service : " + mv.getUserPw());
+		MemberVO m = memberDAO.selectOneMemberNoEncrypt(jdbcTemplate, mv);
+		
+		System.out.println("DB 갔다옴 : " + m.getUserId());
+		return m;
+	}
+
 }

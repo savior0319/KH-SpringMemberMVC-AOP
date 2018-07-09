@@ -15,4 +15,7 @@ public interface MemberDAO {
 
 	Object allMember(JdbcTemplate jdbcTemplate);
 
+
+	MemberVO selectOneMemberNoEncrypt(JdbcTemplate jdbc, MemberVO mv);
+
 }

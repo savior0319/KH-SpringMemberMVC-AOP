@@ -4,7 +4,7 @@ import java.security.MessageDigest;
 
 public class SHA256Util {
 
-	public String encryData(String data) throws Exception {
+	public String encryptData(String data) throws Exception {
 
 		// MessageDigest 객체를 사용해서 SHA256으로 암호화를 할 수 있도록 객체 생성
 		MessageDigest mDigest = MessageDigest.getInstance("SHA-256");

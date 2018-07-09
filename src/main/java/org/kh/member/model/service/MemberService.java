@@ -16,4 +16,7 @@ public interface MemberService {
 
 	void logic();
 
+
+	MemberVO selectOneMemberNoEncrypt(MemberVO mv);
+
 }
