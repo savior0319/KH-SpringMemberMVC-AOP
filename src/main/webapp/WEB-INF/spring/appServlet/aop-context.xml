@@ -4,17 +4,20 @@
 	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-4.3.xsd
 		http://www.springframework.org/schema/aop http://www.springframework.org/schema/aop/spring-aop-4.3.xsd">
 
+	<aop:aspectj-autoproxy/>
+
+
 	<!-- LogAdvice Bean 객체 생성 -->
-	<bean id="log" class="org.kh.member.common.LogAdvice">
-	</bean>
+<!-- 	<bean id="log" class="org.kh.member.common.LogAdvice">
+	</bean> -->
 
 	<!-- AOP 등록 및 설정 -->
-	<aop:config proxy-target-class="false">
+<!-- 	<aop:config proxy-target-class="true">
 		<aop:pointcut id="allPointcut" expression="execution(* org.kh.member.model.service.*ServiceImpl.*(..))" />
 		<aop:pointcut expression="execution(int org.kh.member.model.service.*ServiceImpl.*(org.kh.member.model.vo.MemberVO))" id="transactionPointCut"/>
 		<aop:aspect ref="log">
 			<aop:around pointcut-ref="allPointcut" method="aroundLog" />
 			<aop:after pointcut-ref="transactionPointCut" method="printTransactionLog"/>
 		</aop:aspect>
-	</aop:config>
+	</aop:config> -->
 </beans>

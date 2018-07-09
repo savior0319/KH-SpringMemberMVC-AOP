@@ -56,7 +56,7 @@ public class MemberServiceImpl implements MemberService {
 
 	@Override
 	public void logic() {
-		System.out.println("비즈니스 로직 호출");
+		// System.out.println("비즈니스 로직 호출");
 	}
 
 }
